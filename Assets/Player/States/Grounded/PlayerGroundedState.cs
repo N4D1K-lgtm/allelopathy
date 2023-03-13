@@ -35,18 +35,23 @@ public class PlayerGroundedState : PlayerBaseState
         if (Ctx.MoveInputX < 0)
         {
             Ctx.SpriteRenderer.flipX = true;
+            Ctx.AttackPoint.position = new Vector3(Ctx.Transform.position[0] - 30, Ctx.Transform.position[1] - 4, 0);
+
 
 
         }
         else if (Ctx.MoveInputX > 0)
         {
             Ctx.SpriteRenderer.flipX = false;
+            Ctx.AttackPoint.position = new Vector3(Ctx.Transform.position[0] + 30, Ctx.Transform.position[1] - 4, 0);
+
 
         }
 
         if (Ctx.AttackCooldown >= 0)
         {
             Ctx.AttackCooldown -= 1 * Ctx.DeltaTime;
+
         }
     }
 

@@ -1,28 +1,29 @@
 using UnityEngine;
+
 public class PlayerAirborneState : PlayerBaseState
 {
     private float _targetPosX;
+
     // create a public constructor method with currentContext of type PlayerStateMachine, factory of type PlayerStateFactory
     // and pass this to the base state constructor
-    public PlayerAirborneState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
+    public PlayerAirborneState(
+        PlayerStateMachine currentContext,
+        PlayerStateFactory playerStateFactory
+    )
+        : base(currentContext, playerStateFactory)
     {
         IsRootState = true;
         InitializeSubState();
-
     }
 
     // this method is called in SwitchState(); of the parent class after the last state's ExitState() function was called
-    public override void EnterState()
-    {
-    }
+    public override void EnterState() { }
 
     // UpdateState(); is called everyframe inside of the Update(); function of the currentContext (PlayerStateMachine.cs)
     public override void UpdateStateLogic()
     {
         // Check to see if the current state should switch
         CheckSwitchStates();
-
-
     }
 
     // UpdateState(); is called everyframe inside of the LateUpdate(); function of the currentContext (PlayerStateMachine.cs)
@@ -30,45 +31,51 @@ public class PlayerAirborneState : PlayerBaseState
     {
         if (Ctx.MoveInputX > 0)
         {
-            
+            Ctx.AttackPoint.position = new Vector3(
+                Ctx.Transform.position[0] + 30,
+                Ctx.Transform.position[1] - 4,
+                0
+            );
         }
         else if (Ctx.MoveInputX < 0)
         {
-            
+            Ctx.AttackPoint.position = new Vector3(
+                Ctx.Transform.position[0] - 30,
+                Ctx.Transform.position[1] - 4,
+                0
+            );
         }
         else if (Ctx.MoveInputX == 0)
         {
             Ctx.TargetDirection = 0;
-
         }
 
         Ctx.CurrentMovementX = Ctx.MaxFootSpeed * Ctx.MoveInputX * Ctx.DeltaTime;
-
 
         if (Ctx.Controller2D.collisions.above)
         {
             //If player collides with ceiling, set velocity.y to 0 to stop player movement
             Ctx.VelocityY = 0;
-
         }
 
-
-        Ctx.CurrentMovementY = Ctx.VelocityY * Ctx.DeltaTime + .5f * Ctx.Gravity * Ctx.DeltaTime * Ctx.DeltaTime;
+        Ctx.CurrentMovementY =
+            Ctx.VelocityY * Ctx.DeltaTime + .5f * Ctx.Gravity * Ctx.DeltaTime * Ctx.DeltaTime;
         // Calculate new _velocityY from gravity and timestep
         Ctx.VelocityY += (Ctx.Gravity * Ctx.DeltaTime);
         // Clamp vertical velocity in between +/- of MaxFallSpeed;
-        Ctx.CurrentMovementY = Mathf.Clamp(Ctx.CurrentMovementY, -Ctx.MaxFallSpeed, Ctx.MaxFallSpeed);
+        Ctx.CurrentMovementY = Mathf.Clamp(
+            Ctx.CurrentMovementY,
+            -Ctx.MaxFallSpeed,
+            Ctx.MaxFallSpeed
+        );
 
         if (Ctx.MoveInputX < 0)
         {
             Ctx.SpriteRenderer.flipX = true;
-
-
         }
         else if (Ctx.MoveInputX > 0)
         {
             Ctx.SpriteRenderer.flipX = false;
-
         }
 
         if (Ctx.AttackCooldown >= 0)
@@ -78,18 +85,21 @@ public class PlayerAirborneState : PlayerBaseState
     }
 
     // this method is called in SwitchState(); of the parent class before the next state's EnterState() function is called
-    public override void ExitState()
-    {
-
-    }
+    public override void ExitState() { }
 
     public override void InitializeSubState()
     {
-        if (Ctx.CurrentMovementY <= 0 && (Ctx.Controller2D.collisions.left || Ctx.Controller2D.collisions.left))
+        if (
+            Ctx.CurrentMovementY <= 0
+            && (Ctx.Controller2D.collisions.left || Ctx.Controller2D.collisions.left)
+        )
         {
             SetSubState(Factory.WallSlide());
         }
-        else if (Ctx.CurrentMovementY < 0 && (!Ctx.Controller2D.collisions.left || !Ctx.Controller2D.collisions.right))
+        else if (
+            Ctx.CurrentMovementY < 0
+            && (!Ctx.Controller2D.collisions.left || !Ctx.Controller2D.collisions.right)
+        )
         {
             SetSubState(Factory.Falling());
         }
