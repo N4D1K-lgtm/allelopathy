@@ -1,0 +1,482 @@
+fileFormatVersion: 2
+guid: c3c72a9996a02b344b32bb104d2e9ff2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5590800361925366672
+    second: The Heart Hoarder_Idle_0
+  - first:
+      213: 3004709115595969172
+    second: The Heart Hoarder_Idle_1
+  - first:
+      213: -7796594371870985351
+    second: The Heart Hoarder_Idle_2
+  - first:
+      213: -8961968726849172814
+    second: The Heart Hoarder_Idle_3
+  - first:
+      213: 2780129162538686070
+    second: The Heart Hoarder_Idle_4
+  - first:
+      213: -2093646691701349949
+    second: The Heart Hoarder_Idle_5
+  - first:
+      213: 534883494549141401
+    second: The Heart Hoarder_Idle_6
+  - first:
+      213: 803840953829527148
+    second: The Heart Hoarder_Idle_7
+  - first:
+      213: -1468223372412181797
+    second: The Heart Hoarder_Idle_8
+  - first:
+      213: -1759833816639523403
+    second: The Heart Hoarder_Idle_9
+  - first:
+      213: -1947124127781751033
+    second: The Heart Hoarder_Idle_10
+  - first:
+      213: 517251661085254563
+    second: The Heart Hoarder_Idle_11
+  - first:
+      213: -8002675006351964495
+    second: The Heart Hoarder_Idle_12
+  - first:
+      213: -5986849117334034483
+    second: The Heart Hoarder_Idle_13
+  - first:
+      213: -656750613222885009
+    second: The Heart Hoarder_Idle_14
+  - first:
+      213: 7016137641179591157
+    second: The Heart Hoarder_Idle_15
+  - first:
+      213: 3948092513205726686
+    second: The Heart Hoarder_Idle_16
+  - first:
+      213: 7167844155004974420
+    second: The Heart Hoarder_Idle_17
+  - first:
+      213: -420112717187679713
+    second: The Heart Hoarder_Idle_18
+  - first:
+      213: 6868403704654657598
+    second: The Heart Hoarder_Idle_19
+  - first:
+      213: 6836713465687496599
+    second: The Heart Hoarder_Idle_20
+  - first:
+      213: 6722843166585685579
+    second: The Heart Hoarder_Idle_21
+  - first:
+      213: -825047575886303122
+    second: The Heart Hoarder_Idle_22
+  - first:
+      213: 8313593358166700335
+    second: The Heart Hoarder_Idle_23
+  - first:
+      213: 963596379206719397
+    second: The Heart Hoarder_Idle_24
+  - first:
+      213: -360628103747172211
+    second: The Heart Hoarder_Idle_25
+  - first:
+      213: -1076631381028954737
+    second: The Heart Hoarder_Idle_26
+  - first:
+      213: 8406391119000612322
+    second: The Heart Hoarder_Idle_27
+  - first:
+      213: 6204810331676260923
+    second: The Heart Hoarder_Idle_28
+  - first:
+      213: -6767756156993313247
+    second: The Heart Hoarder_Idle_29
+  - first:
+      213: -5266361584467254390
+    second: The Heart Hoarder_Idle_30
+  - first:
+      213: -7515007791196849208
+    second: The Heart Hoarder_Idle_31
+  - first:
+      213: -1701989045999882802
+    second: The Heart Hoarder_Idle_32
+  - first:
+      213: 739411590580228665
+    second: The Heart Hoarder_Idle_33
+  - first:
+      213: 3969875118046158055
+    second: The Heart Hoarder_Idle_34
+  - first:
+      213: 2791015086719667982
+    second: The Heart Hoarder_Idle_35
+  - first:
+      213: -3697866604863487863
+    second: The Heart Hoarder_Idle_36
+  - first:
+      213: -5605812016827551766
+    second: The Heart Hoarder_Idle_37
+  - first:
+      213: 582544737046589874
+    second: The Heart Hoarder_Idle_38
+  - first:
+      213: 5207905632694014577
+    second: The Heart Hoarder_Idle_39
+  - first:
+      213: -129994846480759809
+    second: The Heart Hoarder_Idle_40
+  - first:
+      213: 374397742150720450
+    second: The Heart Hoarder_Idle_41
+  - first:
+      213: 2192549227887610464
+    second: The Heart Hoarder_Idle_42
+  - first:
+      213: 8892549517296713842
+    second: The Heart Hoarder_Idle_43
+  - first:
+      213: -3003219310720506760
+    second: The Heart Hoarder_Idle_44
+  - first:
+      213: -319834985025924661
+    second: The Heart Hoarder_Idle_45
+  - first:
+      213: -7360314224596148745
+    second: The Heart Hoarder_Idle_46
+  - first:
+      213: -3193819743276178653
+    second: The Heart Hoarder_Idle_47
+  - first:
+      213: -4308768422870948159
+    second: The Heart Hoarder_Idle_48
+  - first:
+      213: -7625874494295513451
+    second: The Heart Hoarder_Idle_49
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: The Heart Hoarder_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 222
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 093dfaece43869d40800000000000000
+      internalID: 5590800361925366672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Heart Hoarder_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 0
+        width: 222
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 492d970650fd2b920800000000000000
+      internalID: 3004709115595969172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Heart Hoarder_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 0
+        width: 222
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 973f1d61abeecc390800000000000000
+      internalID: -7796594371870985351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Heart Hoarder_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 0
+        width: 222
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bacefbece0b0a380800000000000000
+      internalID: -8961968726849172814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Heart Hoarder_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 0
+        width: 222
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67692da5eb0059620800000000000000
+      internalID: 2780129162538686070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Heart Hoarder_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 0
+        width: 222
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c128ff2d6fd1f2e0800000000000000
+      internalID: -2093646691701349949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Heart Hoarder_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 0
+        width: 222
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99732d054b94c6700800000000000000
+      internalID: 534883494549141401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Heart Hoarder_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 0
+        width: 222
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6e8beca611d72b00800000000000000
+      internalID: 803840953829527148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Heart Hoarder_Idle_8
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 0
+        width: 222
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd2227c2f92df9be0800000000000000
+      internalID: -1468223372412181797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Heart Hoarder_Idle_9
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 0
+        width: 222
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b53b7fb770d397e0800000000000000
+      internalID: -1759833816639523403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 9216895dceac2d44cbfd8e516aeaaa8f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      The Heart Hoarder_Idle_0: 5590800361925366672
+      The Heart Hoarder_Idle_1: 3004709115595969172
+      The Heart Hoarder_Idle_2: -7796594371870985351
+      The Heart Hoarder_Idle_3: -8961968726849172814
+      The Heart Hoarder_Idle_4: 2780129162538686070
+      The Heart Hoarder_Idle_5: -2093646691701349949
+      The Heart Hoarder_Idle_6: 534883494549141401
+      The Heart Hoarder_Idle_7: 803840953829527148
+      The Heart Hoarder_Idle_8: -1468223372412181797
+      The Heart Hoarder_Idle_9: -1759833816639523403
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
