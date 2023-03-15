@@ -31,9 +31,9 @@ public class PathfindingController : MonoBehaviour
         public Node parent;
     
         // Default empty Node
-        public Node(Vector3Int pos)
+        public Node(Vector3Int pos, bool traverseabl)
         {
-            traversable = true;
+            traversable = traverseabl;
             position = pos;
             gCost = 0;
             hCost = 0;
@@ -63,7 +63,7 @@ public class PathfindingController : MonoBehaviour
             // Convert cell position to world position
             Vector3 cellWorldPos = tilemap.CellToWorld(cellPos);
             // Add node to the dictionary
-            nodes[cellPos] = new Node(cellPos);
+            nodes[cellPos] = new Node(cellPos, tilemap.GetSprite(cellPos) == null);
         }
     }
     void OnDrawGizmos() {
