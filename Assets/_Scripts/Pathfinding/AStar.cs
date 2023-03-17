@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -124,7 +124,7 @@ public class AStar : MonoBehaviour
     }
 }
 
-public class Node
+private class Node
 {
     public Vector3Int position;
     public bool traversable;
@@ -144,3 +144,4 @@ public class Node
         parent = null;
     }
 }
+*/
