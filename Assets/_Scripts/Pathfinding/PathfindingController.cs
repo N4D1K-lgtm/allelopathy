@@ -12,10 +12,12 @@ public class PathfindingController : MonoBehaviour
     public Transform player_transform;
     public Transform enemy_transform;
     public Grid grid;
+    public BoxCollider2D enemyBoxCollider;
     private Vector3 cellSize;
     
     // initialize a dictionary of nodes with Vector3Ints as keys
     private Dictionary<Vector3Int, Node> nodes = new Dictionary<Vector3Int, Node>();
+    private List<Vector3Int> positionOffsetsWithinEnemy;
 
     // Implement the Nodes
     private class Node : IComparable<Node>
@@ -65,10 +67,12 @@ public class PathfindingController : MonoBehaviour
             // Add node to the dictionary
             nodes[cellPos] = new Node(cellPos, tilemap.GetSprite(cellPos) == null);
         }
+
+        positionOffsetsWithinEnemy = GetPositionOffsetsWithinBoxCollider(enemyBoxCollider, enemy_transform);
     }
     void OnDrawGizmos() {
         if (Application.isPlaying) {
-            List<Node> path = FindPath(player_transform.position, enemy_transform.position);
+            List<Node> path = FindPath(enemy_transform.position, player_transform.position, positionOffsetsWithinEnemy);
             // print(nodes[tilemap.WorldToCell(player_transform.position)].position);
             // Convert cell position to world position
             Gizmos.color = new Color(0, 0, 1, 0.5f);
@@ -76,15 +80,28 @@ public class PathfindingController : MonoBehaviour
                 Vector3 cellWorldPos = tilemap.CellToWorld(node.position);   
                 Gizmos.DrawCube(cellWorldPos + cellSize / 2f, cellSize);
             }
+
+            Gizmos.color = new Color(0, 1, 0, 0.5f);
+            // Color cells within enemy's collider green
+            foreach (Vector3Int cellOffset in positionOffsetsWithinEnemy)
+            {
+                Vector3Int cellPos = tilemap.WorldToCell(enemy_transform.position);
+                Vector3Int enemyNodePosition = cellPos + cellOffset;
+                Vector3 cellWorldPos = tilemap.CellToWorld(enemyNodePosition);
+                Gizmos.DrawCube(cellWorldPos + cellSize / 2f, cellSize);
+
+            }
         }
     }
 
-    List<Node> FindPath(Vector3 Start, Vector3 Target) 
+    List<Node> FindPath(Vector3 Start, Vector3 Target, List<Vector3Int> positionOffsets) 
     {
         /*
         *
         * @param Start The starting position in world units.
         * @param Target The ending position in world units.
+        * @param positionOffsets List of nodes to check referenced from the start node.
+        *        To make it just check the single tile, use new List<Vector3Int> {new Vector3Int(0,0,0)}.
         * @return path The list of nodes that make the shortest path.
         *
         */
@@ -101,14 +118,14 @@ public class PathfindingController : MonoBehaviour
         openSet.Add(startNode);
 
         while (true) {
-
             // Get the node with the lowest fCost from the open set
             Node currentNode;
             if (openSet.Any()) {
                 currentNode = openSet.Min();
             } else {
-                Debug.Log("This is very bad.");
-                return new List<Node>();
+                // We couldn't find a path to the target, so just get as close as we can
+                Node tryThisNode = closedSet.Where(node => node.traversable && node.parent != null).OrderBy(node => node.hCost).First();
+                return RetracePath(startNode, tryThisNode);
             }
             
             // Remove the current node from the open set and add it to the closed set
@@ -131,12 +148,32 @@ public class PathfindingController : MonoBehaviour
             {
                 Node neighborNode = nodes[neighborPos];
 
-                // If the neighbor is in the closed set, skip it
-                if (closedSet.Contains(neighborNode) || !neighborNode.traversable)
+                // If the neighbor is in the closed set, or is not traversable skip it
+                bool skip = false;
+                // Check if it's in the closed set
+                if (closedSet.Contains(neighborNode))
+                {
+                    skip = true;
+                }
+
+                // Check to make sure that it, and all the nodes within the collider, are traversable
+                foreach (Vector3Int cellOffset in positionOffsets)
+                {
+                    Vector3Int testPosition = neighborNode.position + cellOffset;
+                    if (nodes.ContainsKey(testPosition))
+                    {
+                        Node testNode = nodes[testPosition];
+                        if (!testNode.traversable)
+                        {
+                            skip = true; break;
+                        }
+                        
+                    }
+                }
+                if (skip)
                 {
                     continue;
                 }
-
                 // Calculate the tentative gCost of the neighbor
                 int tentativeGCost = currentNode.gCost + GetDistance(currentNode.position, neighborNode.position);
 
@@ -192,11 +229,6 @@ public class PathfindingController : MonoBehaviour
         // Reverse the path so it goes from start to end
         path.Reverse();
 
-        // Print the path
-        foreach (Node node in path)
-        {
-            // Debug.Log(node.position);
-        }
         return path;
     }
     int GetDistance(Vector3Int posA, Vector3Int posB)
@@ -207,5 +239,30 @@ public class PathfindingController : MonoBehaviour
         int straightSteps = Mathf.Abs(distX - distY);
         int dist = diagonalSteps * 14 + straightSteps * 10;
         return dist;
+    }
+
+    List<Vector3Int> GetPositionOffsetsWithinBoxCollider(BoxCollider2D boxCollider, Transform playerTransform)
+    {
+        List<Vector3Int> positionsWithinBoxCollider = new List<Vector3Int>();
+        Vector3Int playerCellPos = tilemap.WorldToCell(playerTransform.position);
+
+        foreach (Node node in nodes.Values)
+        {
+            // Convert cell position to world position
+            Vector3 cellWorldPos = tilemap.CellToWorld(node.position);
+            cellWorldPos += cellSize / 2f;
+
+            // We don't care about the z-axis for finding the tiles, so force them to be the same
+            cellWorldPos[2] = playerTransform.position[2];
+
+            // Check if the world position is inside the box collider
+            if (boxCollider.bounds.Contains(cellWorldPos))
+            {
+                Vector3Int positionWithinBox = node.position - playerCellPos; // Subtract the player's cell position from the node's position
+                positionsWithinBoxCollider.Add(positionWithinBox);
+            }
+        }
+
+        return positionsWithinBoxCollider;
     }
 }
