@@ -40,13 +40,6 @@ public class Pathfinding : MonoBehaviour
                 Gizmos.color = Color.white;
             }
 
-            // Draw a semitransparent green cube at the enemy's position
-            if (tilemap.WorldToCell(enemy_transform.position) == cellPos) {
-                Gizmos.color = new Color(0, 1, 0, 0.5f);
-                Gizmos.DrawCube(cellWorldPos + cellSize / 2f, cellSize);
-                Gizmos.color = Color.white;
-            }
-
             // Draw the grid at the world position
             Gizmos.DrawWireCube(cellWorldPos + cellSize / 2f, cellSize);
         }
